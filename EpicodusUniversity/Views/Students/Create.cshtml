@@ -9,11 +9,23 @@
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { @class = "text", type = "name", required = "required" })
 
   @Html.Label("Select course")
   @Html.DropDownList("CourseId")
 
+  
+  @Html.LabelFor(model => model.EnrollmentDate)
+  @Html.TextBoxFor(model => model.EnrollmentDate, new{@class = "datepicker form-control input-datepicker",
+placeholder = "dd/mm/yyyy", data_date_format = "dd/mm/yyyy", type = "date"})
+
+  
+
   <input type="submit" value="Add new student" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all students", "Index")</p>
+
+
+ @* @Html.LabelFor(model => model.EnrollmentDate)
+  @Html.TextBoxFor(model => model.EnrollmentDate, new{@class = "datepicker form-control input-datepicker",
+placeholder = "dd/mm/yyyy", data_date_format = "dd/mm/yyyy", type = "date"}) *@
