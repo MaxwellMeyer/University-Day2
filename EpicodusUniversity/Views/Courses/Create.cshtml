@@ -7,8 +7,8 @@
 <h4>Add a new course</h4>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.CourseTitle)
+  @Html.TextBoxFor(model => model.CourseTitle)
   <input type="submit" value="Add new course" />
 }
 <p>@Html.ActionLink("Show all courses", "Index")</p>

@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model University.Models.Item
+@model University.Models.Student
 
 <h4>Add a new Student Profile:</h4>
 
@@ -11,7 +11,7 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
 
-  @Html.LabelFor(model => model.Course)
+  @Html.Label("Select course")
   @Html.DropDownList("CourseId")
 
   <input type="submit" value="Add new student" class="btn btn-default" />

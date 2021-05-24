@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model University.Models.Item
+@model University.Models.Student
 
 <h2>Edit</h2>
 
@@ -15,7 +15,7 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  @Html.LabelFor(model => model.Course)
+  @Html.Label("Select a course")
   @Html.DropDownList("CourseId")
 
   <input type="submit" value="Save" />
