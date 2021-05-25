@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
@@ -66,6 +67,22 @@ namespace University.Controllers
     {
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
       _db.Courses.Remove(thisCourse);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    public ActionResult AddStudent(int id)
+    {
+      var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      ViewBag.StudentId = new SelectList(_db.Students, "StudentId", "Name");
+      return View(thisCourse);
+    }
+    [HttpPost]
+    public ActionResult AddStudent(Course course, int StudentId)
+    {
+      if (StudentId != 0)
+      {
+        _db.CourseStudent.Add(new CourseStudent() { StudentId = StudentId, CourseId = course.CourseId });
+      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
