@@ -14,18 +14,18 @@
   @Html.Label("Select course")
   @Html.DropDownList("CourseId")
 
-  
+
   @Html.LabelFor(model => model.EnrollmentDate)
   @Html.TextBoxFor(model => model.EnrollmentDate, new{@class = "datepicker form-control input-datepicker",
-placeholder = "dd/mm/yyyy", data_date_format = "dd/mm/yyyy", type = "date"})
+placeholder = "dd/mm/yyyy", data_date_format = "dd/mm/yyyy", @type = "date"})
 
-  
+
 
   <input type="submit" value="Add new student" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all students", "Index")</p>
 
 
- @* @Html.LabelFor(model => model.EnrollmentDate)
+@* @Html.LabelFor(model => model.EnrollmentDate)
   @Html.TextBoxFor(model => model.EnrollmentDate, new{@class = "datepicker form-control input-datepicker",
-placeholder = "dd/mm/yyyy", data_date_format = "dd/mm/yyyy", type = "date"}) *@
+  placeholder = "dd/mm/yyyy", data_date_format = "dd/mm/yyyy", type = "date"}) *@

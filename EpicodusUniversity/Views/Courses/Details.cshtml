@@ -7,8 +7,9 @@
 <h2>Course Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.CourseTitle): @Html.DisplayFor(model => model.CourseTitle)</h3>
+<h3>@Html.DisplayNameFor(model => model.CourseNum): @Html.DisplayFor(model => model.CourseNum)</h3>
 
-@if(@Model.JoinEntities.Count == 0)
+@if (@Model.JoinEntities.Count == 0)
 {
   <p>This course does not contain any students</p>
 }
@@ -16,10 +17,10 @@ else
 {
   <h4>Students enrolled in this course:</h4>
   <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Student.Name</li>
-  }
+  @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Student.Name</li>
+    }
   </ul>
 }
 

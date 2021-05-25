@@ -8,7 +8,7 @@ using University.Models;
 namespace EpicodusUniversity.Migrations
 {
     [DbContext(typeof(UniversityContext))]
-    [Migration("20210524214632_Initial")]
+    [Migration("20210525172816_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

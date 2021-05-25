@@ -9,6 +9,10 @@
 {
   @Html.LabelFor(model => model.CourseTitle)
   @Html.TextBoxFor(model => model.CourseTitle, new { @class = "text", type = "name", required = "required" })
+
+  @Html.LabelFor(model => model.CourseNum)
+  @Html.TextBoxFor(model => model.CourseNum, new { @class = "text", type = "name", required = "required" })
+
   <input type="submit" value="Add new course" />
 }
 <p>@Html.ActionLink("Show all courses", "Index")</p>
