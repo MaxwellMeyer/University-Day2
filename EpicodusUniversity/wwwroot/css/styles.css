@@ -1,0 +1,27 @@
+body {
+  background: rgb(9, 93, 250);
+  text-align: center;
+  text-shadow: 1px 1px rgb(0, 255, 255);
+  font-size: 3rem;
+  color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: rgb(61, 218, 30);
+  text-shadow: 1px 1px rgb(0, 255, 255);
+}
+h1 {
+  font-size: 5rem;
+}
+h3 {
+  margin-top: 25px;
+}
+h1 {
+  margin-bottom: 45px;
+}
+p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

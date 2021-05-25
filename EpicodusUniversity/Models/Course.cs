@@ -10,7 +10,7 @@ namespace University.Models
     }
     public int CourseId { get; set; }
     public string CourseTitle { get; set; }
-    public int CourseNum { get; set; }
+    public string CourseNum { get; set; }
     public virtual ICollection<CourseStudent> JoinEntities { get; set; }
   }
 }
