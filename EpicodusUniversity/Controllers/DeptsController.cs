@@ -36,11 +36,12 @@ namespace University.Controllers
     public ActionResult Details(int id)
     {
       var thisDept = _db.Depts
-        .Include(dept => dept.JoinEntities)
+        .Include(dept => dept.JoinEntity)
         .ThenInclude(join => join.Student)
         .FirstOrDefault(dept => dept.DeptId == id);
       return View(thisDept);
     }
+
 
     // public ActionResult Edit(int id)
     // {
