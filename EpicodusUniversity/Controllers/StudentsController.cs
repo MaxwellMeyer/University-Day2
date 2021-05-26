@@ -25,17 +25,19 @@ namespace University.Controllers
     public ActionResult Create()
     {
       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "CourseTitle");
+      ViewBag.DeptId = new SelectList(_db.Depts, "DeptId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Student student, int CourseId)
+    public ActionResult Create(Student student, int CourseId, int DeptId)
     {
       _db.Students.Add(student);
       _db.SaveChanges();
-      if (CourseId != 0)
+      if (CourseId != 0 || DeptId != 0)
       {
         _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId });
+        _db.DeptStudent.Add(new DeptStudent() { DeptId = DeptId, StudentId = student.StudentId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");

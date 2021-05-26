@@ -14,8 +14,8 @@
   @Html.Label("Select course")
   @Html.DropDownList("CourseId")
 
-  @* @Html.Label("Select department")
-  @Html.DropDownList("DeptId")*@
+  @Html.Label("Select department")
+  @Html.DropDownList("DeptId")
 
   @Html.LabelFor(model => model.EnrollmentDate)
   @Html.TextBoxFor(model => model.EnrollmentDate, new{@class = "datepicker form-control input-datepicker",
