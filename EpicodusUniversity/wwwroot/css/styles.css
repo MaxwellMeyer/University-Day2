@@ -8,11 +8,17 @@ body {
   flex-direction: column;
 }
 
+li {
+  list-style-type: none;
+  color: rgb(191, 112, 255);
+}
+
 a {
   color: rgb(61, 218, 30);
   text-shadow: 1px 1px rgb(0, 255, 255);
 }
 h1 {
+  text-shadow: 1px 1px rgb(208, 255, 0);
   font-size: 5rem;
   margin-bottom: 45px;
 }
@@ -26,9 +32,28 @@ h3 {
 }
 h4 {
   color: yellow;
-  font-size: 4rem;
+  font-size: 5rem;
+  margin-bottom: 115px;
+  margin-top: 75px;
 }
 p {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+#bloop {
+  margin-top: 50px;
+}
+#bleep {
+  background: linear-gradient(to right, cyan, rgb(175, 1, 255));
+  color: rgb(1, 255, 1);
+  padding: 25px 25px;
+  border-radius: 50%;
+  margin-top: 45px;
+  border: none;
+}
+#bleep:hover {
+  filter: drop-shadow(8px 8px 10px rgb(0, 217, 255));
+}
+#bleep:active {
+  background: red;
 }
