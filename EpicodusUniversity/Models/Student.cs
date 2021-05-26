@@ -11,12 +11,11 @@ namespace University.Models
     public Student()
     {
       this.JoinEntities = new HashSet<CourseStudent>();
-      // this.JoinEntities = new HashSet<DeptStudent>();
+      this.JoinEntity = new HashSet<DeptStudent>();
     }
-    // public int DeptId { get; set; }
+    public int DeptId { get; set; }
     public int StudentId { get; set; }
     public string Name { get; set; }
-    // public string EnrollmentDate { get; set; }
 
     [DisplayName("DateOfEnrollment")]
     [DataType(DataType.Date)]
@@ -24,6 +23,6 @@ namespace University.Models
     public DateTime EnrollmentDate { get; set; }
 
     public virtual ICollection<CourseStudent> JoinEntities { get; }
-    // public virtual ICollection<DeptStudent> JoinEntities { get; }
+    public virtual ICollection<DeptStudent> JoinEntity { get; }
   }
 }
