@@ -26,6 +26,21 @@ else
   </ul>
 }
 
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>This Student does not belong to any Departments</p>
+}
+else
+{
+  <h4>Departments the Student belongs to:</h4>
+  <ul>
+  @foreach (var join in Model.JoinEntity)
+    {
+      <li>@join.Dept.Name</li>
+    }
+  </ul>
+}
+
 <p>@Html.ActionLink("Add a Course", "AddCourse", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId })</p>
