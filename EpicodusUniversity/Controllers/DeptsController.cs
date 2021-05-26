@@ -24,5 +24,13 @@ namespace University.Controllers
     {
       return View();
     }
+
+    [HttpPost]
+    public ActionResult Create(Dept dept)
+    {
+      _db.Depts.Add(dept);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
