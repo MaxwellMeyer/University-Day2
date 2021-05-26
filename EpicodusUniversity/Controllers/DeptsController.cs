@@ -32,5 +32,43 @@ namespace University.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    // public ActionResult Details(int id)
+    // {
+    //   var thisDept = _db.Depts
+    //     .Include(dept => dept.JoinEntities)
+    //     .ThenInclude(join => join.Student)
+    //     .FirstOrDefault(dept => dept.DeptId == id);
+    //   return View(thisDept);
+    // }
+
+    public ActionResult Edit(int id)
+    {
+      var thisDept = _db.Depts.FirstOrDefault(dept => dept.DeptId == id);
+      return View(thisDept);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Dept dept)
+    {
+      _db.Entry(dept).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisDept = _db.Depts.FirstOrDefault(dept => dept.DeptId == id);
+      return View(thisDept);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisDept = _db.Depts.FirstOrDefault(dept => dept.DeptId == id);
+      _db.Depts.Remove(thisDept);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
