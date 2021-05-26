@@ -20,5 +20,9 @@ namespace University.Controllers
       List<Dept> model = _db.Depts.ToList();
       return View(model);
     }
+    public ActionResult Create()
+    {
+      return View();
+    }
   }
 }
