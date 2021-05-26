@@ -56,15 +56,17 @@ namespace University.Controllers
     {
       var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "CourseTitle");
+      ViewBag.DeptId = new SelectList(_db.Depts, "DeptId", "Name");
       return View(thisStudent);
     }
 
     [HttpPost]
-    public ActionResult Edit(Student student, int CourseId)
+    public ActionResult Edit(Student student, int CourseId, int DeptId)
     {
-      if (CourseId != 0)
+      if (CourseId != 0 || DeptId != 0)
       {
         _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId });
+        _db.DeptStudent.Add(new DeptStudent() { DeptId = DeptId, StudentId = student.StudentId });
       }
       _db.Entry(student).State = EntityState.Modified;
       _db.SaveChanges();
