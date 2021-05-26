@@ -7,6 +7,7 @@ namespace University.Models
     public virtual DbSet<Course> Courses { get; set; }
     public DbSet<Student> Students { get; set; }
     public DbSet<CourseStudent> CourseStudent { get; set; }
+    public DbSet<Dept> Depts { get; set; }
     public UniversityContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
