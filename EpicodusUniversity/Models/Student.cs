@@ -12,6 +12,7 @@ namespace University.Models
     {
       this.JoinEntities = new HashSet<CourseStudent>();
     }
+    public int DeptId { get; set; }
     public int StudentId { get; set; }
     public string Name { get; set; }
     // public string EnrollmentDate { get; set; }
